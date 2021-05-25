@@ -15,7 +15,7 @@ TEST_CASE(" Test For Battery Current Readings..."){
 	int maxSoc = 50;
 
 	int GenerateNumbers = 150;
-	BatteryParameter batteryparameter(new randomNumberGenertor);
+	BatteryParameter batteryparameter(new randomNumberGenerator);
 
 	//Act...
 	bool currentexpectedResult = batteryparameter.currentGenerator( maxCurrent, GenerateNumbers);
