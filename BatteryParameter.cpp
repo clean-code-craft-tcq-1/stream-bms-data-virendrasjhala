@@ -14,7 +14,7 @@ bool BatteryParameter::inRange(int minValueChecker, int maxValueChecker) {
 	if (maxSignalValue <=maxValueChecker) {
 		return true;
 	}
-	return true;
+	return false;
 }
 
 std::vector<int> BatteryParameter::numberGeneratorController(int max, int GenerateNumbers) {
@@ -31,14 +31,14 @@ bool BatteryParameter::RefreshSignalContainer() {
 	return true;
 }
 
-int BatteryParameter::currentGenerator(int maxCurrent, int GenerateNumbers) {
+bool BatteryParameter::currentGenerator(int maxCurrent, int GenerateNumbers) {
 	SignalUnderTest = numberGeneratorController( maxCurrent,  GenerateNumbers);
-	return 0;
+	return true;
 
 }
-int BatteryParameter::SOCGenerator(int maxSoc, int GenerateNumbers) {
+bool BatteryParameter::SOCGenerator(int maxSoc, int GenerateNumbers) {
 	SignalUnderTest = numberGeneratorController( maxSoc, GenerateNumbers);
-	return 0;
+	return true;
 }
 
 bool BatteryParameter::printOnConsole(std::string parameterType) {

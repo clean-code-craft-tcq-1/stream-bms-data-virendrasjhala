@@ -14,10 +14,10 @@ TEST_CASE(" Test For Battery Current Readings..."){
 	BatteryParameter batteryparameter(new randomNumberGenerator);
 
 	//Act...
-	int expectedResult = batteryparameter.currentGenerator( maxCurrent, GenerateNumbers);
+	bool expectedResult = batteryparameter.currentGenerator( maxCurrent, GenerateNumbers);
 
 	//Assert...
-	assert(expectedResult == 0);
+	assert(expectedResult == true);
 	assert(batteryparameter.inRange(minCurrent, maxCurrent) == true);
 	REQUIRE(batteryparameter.printOnConsole("currentPrinter") == true);
 	REQUIRE(batteryparameter.RefreshSignalContainer()==true);
@@ -33,10 +33,10 @@ TEST_CASE(" Test For Battery Soc Readings...") {
 	BatteryParameter batteryparameter(new randomNumberGenerator);
 	
 	//Act...
-	int expectedResult = batteryparameter.SOCGenerator( maxSoc, GenerateNumbers);
+	bool expectedResult = batteryparameter.SOCGenerator( maxSoc, GenerateNumbers);
 
 	//Assert...
-	assert(expectedResult == 0);
+	assert(expectedResult == true);
 	assert(batteryparameter.inRange(minSoc, maxSoc) == true);
 	REQUIRE(batteryparameter.printOnConsole("socPrinter") == true);
 	REQUIRE(batteryparameter.RefreshSignalContainer() == true);
