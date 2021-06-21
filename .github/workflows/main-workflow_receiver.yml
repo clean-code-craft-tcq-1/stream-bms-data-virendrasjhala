@@ -6,10 +6,10 @@ name: Build Run and Test Receiver
 on:
   push:
     paths-ignore:
-    - 'receiver/**.md'
+    - './receiver/**.md'
   pull_request:
     paths-ignore:
-    - 'receiver/**.md'
+    - './receiver/**.md'
 
 jobs:
   build:
@@ -24,11 +24,11 @@ jobs:
         java-version: 1.8
     - name: Build and Generate coverage
       with:
-        path: receiver/**
+        path: ./receiver/
         run: mvn test jacoco:report
     - name: Upload coverage
       uses: actions/upload-artifact@v2
       with:
         name: coverage
-        path: receiver/target/site/jacoco
+        path: ./receiver/target/site/jacoco
         retention-days: 1
