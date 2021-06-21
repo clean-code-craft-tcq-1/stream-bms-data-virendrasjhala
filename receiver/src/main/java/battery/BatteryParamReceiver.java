@@ -32,14 +32,7 @@ public class BatteryParamReceiver {
 				
 				counter++;
 				
-				computeAndPrintMin();
-
-				computeAndPrintMax();
-
-				// compute moving average after reading 5 inputs
-				if (counter % 5 == 0) {
-					computeAndPrintAverage();
-				}
+				compute(counter);
 
 			}
 		}
@@ -49,6 +42,17 @@ public class BatteryParamReceiver {
 		
 		finally {
 			scanner.close();
+		}
+	}
+
+	private void compute(int counter) {
+		computeAndPrintMin();
+
+		computeAndPrintMax();
+
+		// compute moving average after reading 5 inputs
+		if (counter % 5 == 0) {
+			computeAndPrintAverage();
 		}
 	}
 
