@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: coverage
-        path: ./receiver/target/site/jacoco
+        path: receiver/target/site/jacoco
         retention-days: 1
